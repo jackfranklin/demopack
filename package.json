@@ -1,5 +1,5 @@
 {
-  "name": "demopack",
+  "name": "@jackfranklin/demopack",
   "version": "0.1.0",
   "engines": {
     "node": "8"

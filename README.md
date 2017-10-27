@@ -15,6 +15,8 @@ npm install --global @jackfranklin/demopack
 yarn global add @jackfranklin/demopack
 ```
 
+You'll need to be running __Node 8 or higher__.
+
 ## Usage
 
 Given a folder with the following file in it:
