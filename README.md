@@ -67,6 +67,8 @@ Options:
   --css-modules   Enable CSS Modules support.                   [default: false]
 
   --entry         The JavaScript file that demopack should build from. [default: "index.js"]
+
+  --build         Output static files into a directory. JS and CSS will be minified [default: false]
 ```
 
 ## Prior art / credit
