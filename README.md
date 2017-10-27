@@ -4,6 +4,8 @@ Fire up a pre-configured, live reloading Webpack server that supports React, (S)
 
 Like create-react-app, but without needing to create a new project and `npm install` all the things.
 
+Supports JavaScript, JSX, Sass, CSS Modules and images out of the box. 0 configuration required!
+
 [Catch this quick demo on Youtube to learn more :)](https://www.youtube.com/watch?v=DURXnlY8wD0&feature=youtu.be).
 
 ## But why?
