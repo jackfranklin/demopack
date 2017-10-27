@@ -21,6 +21,8 @@ Demopack is not designed for fully featured projects, but for small demos or one
 
 ## Installation
 
+_Please note that `demopack` is very new and I'm sure it might not work right for all people on all machines. Please open an issue if you have any problems or suggestions!_
+
 You should install `demopack` globally so you can easily run it in a directory.
 
 Unfortunately `demopack` is taken on npm, so you need to install the scoped version:
