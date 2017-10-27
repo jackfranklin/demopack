@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 const outdent = require('outdent')
 
 const argv = require('yargs')
