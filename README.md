@@ -4,6 +4,8 @@ Fire up a pre-configured, live reloading Webpack server that supports React, (S)
 
 Like create-react-app, but without needing to create a new project and `npm install` all the things.
 
+[Catch this quick demo on Youtube to learn more :)](https://www.youtube.com/watch?v=DURXnlY8wD0&feature=youtu.be).
+
 ## Installation
 
 You should install `demopack` globally so you can easily run it in a directory.
@@ -70,6 +72,9 @@ Options:
 
   --build         Output static files into a directory. JS and CSS will be minified [default: false]
 ```
+
+## Changelog
+
 
 ## Prior art / credit
 
