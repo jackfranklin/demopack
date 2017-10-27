@@ -6,6 +6,17 @@ Like create-react-app, but without needing to create a new project and `npm inst
 
 [Catch this quick demo on Youtube to learn more :)](https://www.youtube.com/watch?v=DURXnlY8wD0&feature=youtu.be).
 
+## But why?
+
+I love Webpack, and I love tools like `create-react-app`, but they come with some set up cost.
+
+- For Webpack, it takes a reasonable amount of time to configure and set it up. I love this for full projects, but for quick experiments/demos, it's pretty slow.
+- Similarly `create-react-app` is great but the setup time in generating a new project can be relatively slow, especially on slow networks when you have to install all the dependencies!
+
+The idea behind `demopack` is that it's a pre-packaged Webpack. It includes and configures everything you need, so all you have to do is install `demopack` once, and then when you run it there's no more setup.
+
+Demopack is not designed for fully featured projects, but for small demos or one off projects where you need no extra configuration. For "proper" projects I recommend either Webpack from scratch or a tool like `create-react-app`.
+
 ## Installation
 
 You should install `demopack` globally so you can easily run it in a directory.
