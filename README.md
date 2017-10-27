@@ -42,6 +42,14 @@ Demopack will run a small local server and will refresh automatically when you c
 
 If there's anything you think should be supported out of the box, feel free to open an issue and we can discuss it.
 
+## Production build
+
+The primary goal of `demopack` is to be used for development, but you can generate a production build if you like with the `--build` flag.
+
+This will run all the same plugins, with some extras (CSS is pulled into a separate file, JS & CSS is minified).
+
+The build will output into `./demopack-built` and will contain an `index.html` file alongside any assets.
+
 ## Configuration
 
 The goal of `demopack` is to be preconfigured out of the box, but there are some options you can configure. Running `demopack --help` will show you these:

@@ -5,7 +5,7 @@ const chalk = require('chalk')
 const prettyBytes = require('pretty-bytes')
 
 module.exports = config => {
-  console.log('Creating an optimized production build...')
+  console.log('Creating an optimised production build...')
 
   const compiler = webpack(config)
   return new Promise((resolve, reject) => {
