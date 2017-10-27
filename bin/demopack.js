@@ -5,6 +5,11 @@ const argv = require('yargs')
     describe: 'Automatically open the browser when you run demopack.',
     default: true,
   })
+  .option('build', {
+    describe:
+      'Output static files into a directory. JS and CSS will be minified',
+    default: false,
+  })
   .option('css-modules', {
     describe: 'Enable CSS Modules support.',
     default: false,
@@ -26,9 +31,9 @@ const argv = require('yargs')
     Questions, bugs or suggestions? https://github.com/jackfranklin/demopack
   `).argv
 
-const parseArgs = require('../lib/cli-args')
 const makeWebpackConfig = require('../lib/webpack-config')
 const webpack = require('webpack')
+const demopackBuild = require('./demopack-build')
 const WebpackDevServer = require('webpack-dev-server')
 const {
   choosePort,
@@ -48,6 +53,12 @@ if (argv.help) {
 }
 
 const webpackConfig = makeWebpackConfig(argv)
+
+if (argv.build) {
+  console.log(chalk.blue('Building into ./demopack-built'))
+  demopackBuild(webpackConfig)
+  return
+}
 
 // taken from create-elm-app and then edited
 // https://github.com/halfzebra/create-elm-app/blob/master/scripts/start.js
