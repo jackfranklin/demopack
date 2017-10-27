@@ -1,8 +1,35 @@
+const outdent = require('outdent')
+
+const argv = require('yargs')
+  .option('open-browser', {
+    describe: 'Automatically open the browser when you run demopack.',
+    default: true,
+  })
+  .option('css-modules', {
+    describe: 'Enable CSS Modules support.',
+    default: false,
+  })
+  .option('entry', {
+    describe: 'The JavaScript file that demopack should build from.',
+    default: 'index.js',
+  }).epilogue(outdent`
+    Demopack: Version ${require('../package.json').version}
+
+    Easily run some JavaScript and CSS locally via preconfigured Webpack.
+
+    Demopack supports the following by default:
+      - JavaScript & JSX transpilation, including stage-0 and above proposals.
+      - Sass and CSS, including optional support for CSS Modules.
+        - (use the --css-modules flag to enable them)
+      - Image assets - gif, jpg, png and svg will be loaded for you.
+
+    Questions, bugs or suggestions? https://github.com/jackfranklin/demopack
+  `).argv
+
 const parseArgs = require('../lib/cli-args')
 const makeWebpackConfig = require('../lib/webpack-config')
 const webpack = require('webpack')
 const WebpackDevServer = require('webpack-dev-server')
-const argv = require('yargs').argv
 const {
   choosePort,
   prepareUrls,
@@ -16,9 +43,11 @@ const createCompiler = require('../lib/create-compiler')
 const createDevServerConfig = require('../lib/create-dev-server-config')
 const path = require('path')
 
-const args = parseArgs(argv)
+if (argv.help) {
+  process.exit(0)
+}
 
-const webpackConfig = makeWebpackConfig(args)
+const webpackConfig = makeWebpackConfig(argv)
 
 // taken from create-elm-app and then edited
 // https://github.com/halfzebra/create-elm-app/blob/master/scripts/start.js
@@ -60,7 +89,7 @@ choosePort(HOST, DEFAULT_PORT)
         clearConsole()
       }
       console.log(chalk.cyan('Starting the development server...\n'))
-      openBrowser(urls.localUrlForBrowser)
+      if (argv.openBrowser) openBrowser(urls.localUrlForBrowser)
     })
     ;['SIGINT', 'SIGTERM'].forEach(sig => {
       process.on(sig, () => {
